@@ -1,4 +1,5 @@
 class MembersController < ApplicationController
+  skip_before_action :authenticate, only: [:new, :create] 
   def login
   end
 
