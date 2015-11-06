@@ -1,0 +1,6 @@
+<div class="tweet">
+  <h4>@<%= tweets.author  %></h4>
+  <p><%= tweets.body  %></p>
+  <!-- <p><%= tweets.created_at.strftime("%B %d, %Y, %I:%M:%S %P") %></p> -->
+  <p style="text-align: right;"><%= time_ago_in_words(tweets.created_at) %></p>
+</div>

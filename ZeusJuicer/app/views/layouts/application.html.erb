@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ZeusJuicer</title>
+  <link href='https://fonts.googleapis.com/css?family=Alfa+Slab+One' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <h1 id="logo"><a href="/assets/zeus_intimidates.png" style="text-decoration: none; color: rgba(85,26,139,1);">Zeus</a>Juice</h1>
+  <div id="login-sign-up">
+    <% if logged_in %>
+        <%= button_to 'Logout', logout_path, :method => :delete %>
+    <% else %>
+        <%= link_to "Login", new_login_path %>
+        <%= link_to "Need an account? Sign up!", new_member_path%>
+    <% end %>
+  </div>
+  <h2 id="sub-logo">Fitness, Health, Life!</h2>
+
+  <hr style="clear: both;">
+<%= yield %>
+
+</body>
+</html>
