@@ -31,13 +31,16 @@
 
 #articles-container {
   position: absolute;
-  border: 10px solid orange;
+  /*border: 10px solid rgba(0,188,212,0.2);*/
 }
 
 .article {
   width: 700px;
-  background-color: lightblue;
+  background-color: rgba(0,188,212,1);
   padding: 10px;
+  border-radius: 20px;
+  margin: 5px auto;
+  
 }
 
 #tweets-container {
@@ -47,8 +50,9 @@
 }
 
 .tweet {
-  background-color: lightblue;
+  background-color: rgba(0,188,212,1);
   border-radius: 20px;
   padding: 5px;
-  margin: 5px 0;
+  margin: 5px auto;
+  width: 225px;
 }

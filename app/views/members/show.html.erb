@@ -1,10 +1,19 @@
 <h2>Welcome <%= @member.username %></h2>
-<h2>Stats</h2>
-<h3>Calorie Intake</h3>
-<h3>Exercise Minutes</h3>
-<h3>Journal Rate</h3>
-<h2>Live Feed Contributions</h2>
-<h3>(count)</h3>
-<h2>Journal</h2>
-<h3>(count)</h3>
+<div style="width: 200px; height: 400px; border: 1px solid black; padding: 10px; display: inline-block; vertical-align: top;">
+  <h2>Stats</h2>
+  <h3>Calorie Intake</h3>
+  <div style="width: 200px; height: 50px; background: linear-gradient(90deg, red, white 60%, white); border: 1px solid black;"></div>
+  <h3>Exercise Minutes</h3>
+  <div style="width: 200px; height: 50px; background: linear-gradient(90deg, red, white 20%, white); border: 1px solid black;"></div>
+  <h3>Journal Rate</h3>
+  <div style="width: 200px; height: 50px; background: linear-gradient(90deg, red, white 80%, white); border: 1px solid black;"></div>
+</div>
+<div style="width: 200px; height: 200px; border: 1px solid black; padding: 10px; display: inline-block; vertical-align: top;">
+  <h2>Live Feed Contributions</h2>
+  <h3>(count)</h3>
+</div>
+<div style="width: 200px; height: 200px; border: 1px solid black; padding: 10px; display: inline-block; vertical-align: top;">
+  <h2>Journal</h2>
+  <h3>(count)</h3>
+</div>
 <%= link_to "<= Back to Main Page", root_path%>

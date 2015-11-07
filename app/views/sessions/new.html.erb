@@ -1,4 +1,7 @@
 <%= form_for :session, url: login_path do |f| %>
+<% flash.each do |message_type, message| %>
+     <div class="alert"-<%= message_type %>"><h1><%= message %></h1></div>
+   <% end %>
   <p>
     <%= f.label :username, "Username: "%>
     <%= f.text_field :username%>

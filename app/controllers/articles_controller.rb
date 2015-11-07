@@ -1,4 +1,7 @@
 class ArticlesController < ApplicationController
+  #allows for front page with all articles to show first before login
+  skip_before_action :authenticate, only: [:index] #this needs to be attached to each controller
+
   def index
     @articles = Article.all
     @tweets = Tweet.all
@@ -35,6 +38,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :author, :body)
+    params.require(:article).permit(:title, :author, :body, :image_url)
   end
 end

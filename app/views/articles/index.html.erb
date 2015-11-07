@@ -1,16 +1,19 @@
 <%= link_to "Create a New Article", new_article_path%>
 <div id="articles-container">
+<h2 style="text-align: center;">Recent Articles</h2>
 <% @articles.each do |article| %>
   <div class="article">
   <h2><%= article.title  %></h2>
   <h3>@<%= article.author  %></h3>
   <p><%= article.body  %></p>
+  <img src="<%=article.image_url%>" alt="article photo"/>
   <%= link_to "Edit Article", edit_article_path(article) %>
   <%= link_to "Delete Article", article_path(article), method: :delete %>
   </div>
 <% end %>
 </div>
 <div id="tweets-container">
+  <%= link_to "Create a New Tweet", new_tweet_path%>
   <h2 style="text-align: center;">Live Feed</h2>
   <%= render partial: "articles/tweets", collection: @tweets %>
 </div>

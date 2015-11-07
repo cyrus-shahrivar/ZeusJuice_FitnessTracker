@@ -1,6 +1,6 @@
 <div class="tweet">
-  <h4>@<%= tweets.author  %></h4>
+  <h4 style="margin-top: 3px; margin-bottom: 0; display: inline-block;">@<%= tweets.author  %></h4>
+  <p style="text-align: right; margin-top: 2px; margin-bottom: 2px; display: inline; float: right;"><%= time_ago_in_words(tweets.created_at) %> ago</p>
   <p><%= tweets.body  %></p>
-  <!-- <p><%= tweets.created_at.strftime("%B %d, %Y, %I:%M:%S %P") %></p> -->
-  <p style="text-align: right;"><%= time_ago_in_words(tweets.created_at) %></p>
+  <%= link_to "Delete Tweet", tweet_path(tweets), method: :delete%>
 </div>

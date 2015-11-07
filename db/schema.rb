@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20151105185307) do
     t.string   "title"
     t.string   "body"
     t.string   "author"
+    t.string   "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
