@@ -5,6 +5,8 @@ class MembersController < ApplicationController
 
   def show
     @member = Member.find(params[:id])
+    @all_tweets = Tweet.where(member_id: @member.id)
+    @journal_entries = Journal.where(member_id: @member.id)
   end
 
   def new

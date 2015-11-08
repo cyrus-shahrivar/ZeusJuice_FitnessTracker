@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :articles
   resources :tweets
   resources :members
+  resources :journals
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"

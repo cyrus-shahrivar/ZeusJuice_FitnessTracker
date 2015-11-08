@@ -17,12 +17,16 @@ articles = Article.create([{ title: 'Google Calorie Counter', body: 'Found this 
 ', author: 'Bon Jovi',image_url: "https://upload.wikimedia.org/wikipedia/commons/1/10/Ejercicios-bajar.jpg"  }])
 
 tweets = Tweet.create([{ author: 'Cyrus',body: 'blah blah blah' },
-{ author: 'Cyrus',body: 'Finished Tough Mudder Tri-State 11-7-2015! 2nd Tough Mudder complete!' },
-{ author: 'Courtney',body: 'Finished the Tough Mudder in New Jersey!  Awesome views of the Statue of Liberty' },
-{ author: 'Zeus',body: 'Sleep on the couch because I am a cat.  I cannot believe my parents think it is ok to use my name without permission.' },
-{ author: 'Zeus',body: 'Pounced an ounce.  That\'s killing the string.  It deserved it.  Feeling pumped!' },
-{ author: 'Courtney',body: 'Just ran 7 miles this morning.  Looking forward to running Tough Mudder on Nov. 7th! ' },
-{ author: 'Cyrus',body: 'Working on my 2nd WDI project.  Realized I haven\'t exercised in a while, so I\'m going for a run with Lululemon to test out an app with the SkillCoin NYC app guys.'  },
-{ author: 'Cyrus',body: 'Testing, testing, 1, 2, 3.' }])
+{ author: 'Cyrus',body: 'Finished Tough Mudder Tri-State 11-7-2015! 2nd Tough Mudder complete!', member_id: 1 },
+{ author: 'Courtney',body: 'Finished the Tough Mudder in New Jersey!  Awesome views of the Statue of Liberty', member_id: 2 },
+{ author: 'Zeus',body: 'Sleep on the couch because I am a cat.  I cannot believe my parents think it is ok to use my name without permission.', member_id: 3 },
+{ author: 'Zeus',body: 'Pounced an ounce.  That\'s killing the string.  It deserved it.  Feeling pumped!', member_id: 3 },
+{ author: 'Courtney',body: 'Just ran 7 miles this morning.  Looking forward to running Tough Mudder on Nov. 7th!', member_id: 2 },
+{ author: 'Cyrus',body: 'Working on my 2nd WDI project.  Realized I haven\'t exercised in a while, so I\'m going for a run with Lululemon to test out an app with the SkillCoin NYC app guys.', member_id: 1  },
+{ author: 'Cyrus',body: 'Testing, testing, 1, 2, 3.', member_id: 1 }])
 
-members = Member.create([{username: 'Cyrus', password: 'poop', password_confirmation:'poop'}])
+members = Member.create([{username: 'Cyrus', password: 'poop', password_confirmation:'poop'},
+  {username: 'Courtney', password: 'poop', password_confirmation:'poop'},
+  {username: 'Zeus', password: 'poop', password_confirmation:'poop'}])
+
+journals = Journal.create([{entry: "Hi, testing journal entry", member_id: 2}])
