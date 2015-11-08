@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20151105185307) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
-    t.string   "body"
+    t.text     "body"
     t.string   "author"
     t.string   "image_url"
     t.datetime "created_at", null: false

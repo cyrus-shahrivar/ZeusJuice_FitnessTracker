@@ -1,5 +1,5 @@
-<%= link_to "Create a New Article", new_article_path%>
 <div id="articles-container">
+<%= link_to "Create a New Article", new_article_path%>
 <h2 style="text-align: center;">Recent Articles</h2>
 <% @articles.each do |article| %>
   <div class="article">
@@ -11,6 +11,10 @@
   <%= link_to "Delete Article", article_path(article), method: :delete %>
   </div>
 <% end %>
+</div>
+<div id="community-stats-container">
+  <%= link_to "Placeholder", root_path%>
+  <h2 style="text-align: center;">Community Stats</h2>
 </div>
 <div id="tweets-container">
   <%= link_to "Create a New Tweet", new_tweet_path%>

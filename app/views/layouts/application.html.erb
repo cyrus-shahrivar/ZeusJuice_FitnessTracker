@@ -11,6 +11,7 @@
   <h1 id="logo"><a href="/assets/zeus_intimidates.png" style="text-decoration: none; color: rgba(85,26,139,1);">Zeus</a>Juice</h1>
   <div id="login-sign-up">
     <% if logged_in %>
+        Welcome <%= @current_user.username%> |
         <%= link_to 'Your Page', member_path(@current_user)%> |
         <div style="display: inline-block;"><%= button_to 'Logout', logout_path, :method => :delete %></div>
     <% else %>

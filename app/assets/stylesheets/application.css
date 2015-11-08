@@ -30,8 +30,7 @@
 }
 
 #articles-container {
-  position: absolute;
-  /*border: 10px solid rgba(0,188,212,0.2);*/
+  float: left;
 }
 
 .article {
@@ -40,12 +39,12 @@
   padding: 10px;
   border-radius: 20px;
   margin: 5px auto;
-  
+
 }
 
 #tweets-container {
   float: right;
-  width: 520px;
+  width: 309px;
   position: relative;
 }
 
@@ -55,4 +54,12 @@
   padding: 5px;
   margin: 5px auto;
   width: 225px;
+}
+
+#community-stats-container {
+  position: relative;
+  float: right;
+  width: 234px;
+  height: 1000px;
+  background-color: rgba(0,188,212,1);
 }
