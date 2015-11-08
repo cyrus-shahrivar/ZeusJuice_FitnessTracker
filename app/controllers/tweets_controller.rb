@@ -11,6 +11,8 @@ class TweetsController < ApplicationController
   end
   def create
     @tweet = Tweet.new tweet_params
+    @tweet.member_id = Member.find_by(username: @tweet.author).id
+
     @tweet.save
     redirect_to root_path
   end

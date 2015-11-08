@@ -3,6 +3,7 @@ class CreateTweets < ActiveRecord::Migration
     create_table :tweets do |t|
       t.string :author
       t.string :body
+      t.references :member
       t.timestamps null: false
     end
   end

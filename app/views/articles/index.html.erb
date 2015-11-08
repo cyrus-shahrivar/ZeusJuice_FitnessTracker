@@ -5,8 +5,8 @@
   <div class="article">
   <h2><%= article.title  %></h2>
   <h3>@<%= article.author  %></h3>
-  <p><%= article.body  %></p>
-  <img src="<%=article.image_url%>" alt="article photo"/>
+  <p><%= article.body.html_safe  %></p>
+  <img src="<%=article.image_url%>" alt="article photo" />
   <%= link_to "Edit Article", edit_article_path(article) %>
   <%= link_to "Delete Article", article_path(article), method: :delete %>
   </div>

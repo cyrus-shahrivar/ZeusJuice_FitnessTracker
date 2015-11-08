@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20151105185307) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
-    t.text     "body"
+    t.string   "body"
     t.string   "author"
     t.string   "image_url"
     t.datetime "created_at", null: false
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20151105185307) do
   create_table "tweets", force: :cascade do |t|
     t.string   "author"
     t.string   "body"
+    t.integer  "member_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
