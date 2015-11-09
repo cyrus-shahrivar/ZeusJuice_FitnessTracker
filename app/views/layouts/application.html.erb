@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ZeusJuicer</title>
+  <title>ZeusJuice</title>
   <link href='https://fonts.googleapis.com/css?family=Alfa+Slab+One' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <h1 id="logo"><a href="/assets/zeus_intimidates.png" style="text-decoration: none; color: rgba(85,26,139,1);">Zeus</a>Juice</h1>
+  <h1 id="logo"><a href="/assets/zeus_intimidates.png" style="text-decoration: none; color: rgba(85,26,139,1);">Z</a><a href="/" style="color: black; text-decoration:none;"><span style="color: rgba(85,26,139,1);">eus</span>Juice</a></h1>
   <div id="login-sign-up">
     <% if logged_in %>
         Welcome <%= @current_user.username%> |
@@ -19,7 +19,7 @@
         <%= link_to "Sign Up", new_member_path%>
     <% end %>
   </div>
-  <h2 id="sub-logo">UNLOCK YOUR INNER TIGER!</h2>
+  <h2 id="sub-logo">YOUR FITNESS AND HEALTH SITE</h2>
 
   <hr style="clear: both;">
 <%= yield %>
