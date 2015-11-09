@@ -1,6 +1,6 @@
 # ZeusJuice - FitnessTracker
 
-https://damp-coast-8723.herokuapp.com/  
+https://fathomless-depths-9173.herokuapp.com/
 
 - Author: Cyrus Shahrivar
 - Date: 11/9/2015
