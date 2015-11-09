@@ -30,5 +30,9 @@ I then placed some basic rails elements on my home page and my member pages. Fro
 
 Making it mobile responsive.
 
+### Link to User Stories on Trello
+
+- https://trello.com/b/OuAcZVxm/zeusjuice-fitness-tracker-project
+
 ### Links to Wireframes/Planning Sketches:
  - https://github.com/cyrus-shahrivar/ZeusJuice_FitnessTracker/tree/master/planning
