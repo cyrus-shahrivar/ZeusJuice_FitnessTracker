@@ -21,14 +21,20 @@
 <div id="community-stats-container">
   <br>
   <h2 style="text-align: center;">Community Stats</h2>
-  <li style="padding-left: 5px;">Total Tweets: </li>
-  <li style="padding-left: 5px;">Total Articles: </li>
-  <li style="padding-left: 5px;">Total Members: </li>
-  <li style="padding-left: 5px;">Total Journal Entries: </li>
+  <li style="padding-left: 5px; font-weight: bold;">Total Tweets:</li>
+  <h1 style="text-align: right; padding-right: 15px"><%= Tweet.all.count %></h1>
+  <li style="padding-left: 5px; font-weight: bold;">Total Articles:</li>
+  <h1 style="text-align: right; padding-right: 15px"><%= Article.all.count %></h1>
+  <li style="padding-left: 5px; font-weight: bold;">Total Members:</li>
+  <h1 style="text-align: right; padding-right: 15px"><%= Member.all.count %></h1>
+  <li style="padding-left: 5px; font-weight: bold;">Total Journal Entries:</li>
+  <h1 style="text-align: right; padding-right: 15px"><%= Journal.all.count %></h1>
 </div>
 <div id="tweets-container">
   <br>
   <h2 style="text-align: center;">Live Feed</h2>
+  <% if logged_in %>
   <div style="text-align: center; background-color: rgba(0,188,212,1); border-radius: 20px; width: 200px; margin: auto;"><%= link_to "Create a New Tweet", new_tweet_path%></div>
+  <% end %>
   <%= render partial: "articles/tweets", collection: @tweets %>
 </div>

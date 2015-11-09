@@ -1,5 +1,5 @@
-<h2>Welcome <%= @member.username %></h2>
-<div style="width: 200px; border: 1px solid black; padding: 10px; display: inline-block; vertical-align: top;">
+<h2>Welcome <%= @member.username %>!</h2>
+<div style="width: 31%; border: 1px; padding: 10px; display: inline-block; vertical-align: top;">
   <h2>Stats</h2>
     <%= form_for @member do |f|%>
     <p>
@@ -11,7 +11,8 @@
     </p>
     <%end%>
     <% daily_calorie_percent = @member.calorie_intake.to_f/2000*100%>
-  <div style="width: 200px; height: 50px; background: linear-gradient(to right, red 0%, red <%= daily_calorie_percent%>%, white <%= daily_calorie_percent%>%); border: 1px solid black;"></div>
+  <div style="width: 100%; height: 50px; background: linear-gradient(to right, red 0%, red <%= daily_calorie_percent%>%, white <%= daily_calorie_percent%>%); border: 1px solid black;"></div>
+  <hr>
   <%= form_for @member do |f|%>
   <p>
     <%= f.label :minutes_exercised , "Minutes Exercised"%>
@@ -21,35 +22,31 @@
     <%= f.submit "Update Exercise" %>
   </p>
   <%end%>
-  <div style="width: 200px; height: 50px; background: linear-gradient(to right, red 0%, red <%= @member.minutes_exercised %>%, white <%= @member.minutes_exercised %>%); border: 1px solid black;"></div>
-  <%= form_for @member do |f|%>
-  <p>
-    <%= f.label :journal_num_entries , "Journal Entries"%>
-    <%= f.number_field :journal_num_entries %>
-  </p>
-  <p>
-    <%= f.submit "Update Journaling" %>
-  </p>
-  <%end%>
-  <div style="width: 200px; height: 50px; background: linear-gradient(to right, red 0%, red <%= @member.journal_num_entries %>%, white <%= @member.journal_num_entries %>%); border: 1px solid black;"></div>
+  <div style="width: 100%; height: 50px; background: linear-gradient(to right, red 0%, red <%= @member.minutes_exercised %>%, white <%= @member.minutes_exercised %>%); border: 1px solid black;"></div>
+  <hr>
+  <p>Number of Live Feed Contributions</p>
+  <p style="text-align: right;"><%= @all_tweets.count %></p>
+  <hr>
+  <p>Number of Journal Entries</p>
+  <p style="text-align: right;"><%= @journal_entries.count %></p>
+  <hr>
 </div>
-<div style="width: 200px; border: 1px solid black; padding: 10px; display: inline-block; vertical-align: top;">
+<div style="width: 31%; border: 1px; padding: 10px; display: inline-block; vertical-align: top;">
   <h2>Live Feed Contributions</h2>
   <% @all_tweets.each do |tweet| %>
+      <p><strong><%= tweet.created_at.strftime("%b %d, %Y %I:%M:%S %p") %></strong></p>
       <p><%= tweet.body %></p>
-      <p><%= tweet.created_at %></p>
       <hr>
   <% end %>
 
 </div>
-<div style="width: 200px; border: 1px solid black; padding: 10px; display: inline-block; vertical-align: top;">
+<div style="width: 31%; border: 1px; padding: 10px; display: inline-block; vertical-align: top;">
   <h2>Journal</h2>
   <%= link_to "Add Journal Entry", new_journal_path%>
   <% @journal_entries.each do |journal| %>
-      <p><%= journal.created_at.strftime("%b %d, %Y") %></p>
+      <p><strong><%= journal.created_at.strftime("%b %d, %Y %I:%M:%S %p") %></strong></p>
       <p><%= journal.entry %></p>
       <%= link_to "Edit Entry", edit_journal_path(journal) %>
       <hr>
   <% end %>
 </div>
-<%= link_to "<= Back to Main Page", root_path%>
