@@ -2,16 +2,33 @@
 
 https://damp-coast-8723.herokuapp.com/  
 
+Author: Cyrus Shahrivar
+Date: 11/9/2015
+
 ## Tech Used
 
-## Approach Taken 
+- Ruby
+- Ruby on Rails
+- CSS/HTML/ERB
+- Heroku (for hosting)
+- Github (for organizing and version control)
 
-## Installation Instructions 
+## Approach Taken
+
+I first planned out some wireframes (linked below) to figure out what components I wanted to have on my website.  After that, I did some brainstorming on who would be using the website and how they would interact with it.
+
+I then placed some basic rails elements on my home page and my member pages. From there, I was able to incrementally add more detail, links, interaction, functionality, and style as elements were completed.
+
+## Installation Instructions
+
+1. Create a profile by clicking the sign up link when you visit the website.  That'll create an account for you.  
+2. Once you've done that, login.
+3. Add tweets from the home page, make personal journal entries on your profile page, edit your stats on your profile page, and read the articles on the home page.
+4. Enjoy!
 
 ## Unsolved problems
 
-### Links to Wireframes:
- - 
- -
- -
- -
+Making it mobile responsive.
+
+### Links to Wireframes/Planning Sketches:
+ - https://github.com/cyrus-shahrivar/ZeusJuice_FitnessTracker/tree/master/planning
