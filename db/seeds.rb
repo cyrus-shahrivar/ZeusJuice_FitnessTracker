@@ -6,15 +6,15 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 articles = Article.create([{ title: 'Google Calorie Counter', body: 'Found this <a href="https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#safe=off&q=how+many+calories+are+in+a+hamburger">app</a> on google while trying to figure out how many calories were in a burger I made this afternoon.  In additon to the calorie counter app, there\'s tons of information from the USDA nicely organized in an info box in the same page.  I highly recommend utilizing this app to figure out calories for thing you eat before updating your form.  It\'ll help you learn more about what you are eating and help you towards your fitness goals.
-', author: 'By Cyrus Shahrivar' , image_url: "/assets/CalorieCounterScreenshot.png"},
+', author: 'By Cyrus Shahrivar' ,image_url: 'https://upload.wikimedia.org/wikipedia/commons/1/10/Ejercicios-bajar.jpg'},
 { title: 'Article 1-1', body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-', author: 'Bon Jovi' , image_url: "https://upload.wikimedia.org/wikipedia/commons/1/10/Ejercicios-bajar.jpg" },
+', author: 'Bon Jovi', image_url: 'https://upload.wikimedia.org/wikipedia/commons/1/10/Ejercicios-bajar.jpg' },
 { title: 'Article 2', body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-', author: 'Bon Jovi',image_url: "https://upload.wikimedia.org/wikipedia/commons/1/10/Ejercicios-bajar.jpg"  },
+', author: 'Bon Jovi', image_url: 'https://upload.wikimedia.org/wikipedia/commons/1/10/Ejercicios-bajar.jpg'  },
 { title: 'Article 3', body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-', author: 'Bon Jovi',image_url: "https://upload.wikimedia.org/wikipedia/commons/1/10/Ejercicios-bajar.jpg"  },
+', author: 'Bon Jovi', image_url: 'https://upload.wikimedia.org/wikipedia/commons/1/10/Ejercicios-bajar.jpg'  },
 { title: 'Article 4', body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-', author: 'Bon Jovi',image_url: "https://upload.wikimedia.org/wikipedia/commons/1/10/Ejercicios-bajar.jpg"  }])
+', author: 'Bon Jovi', image_url: 'https://upload.wikimedia.org/wikipedia/commons/1/10/Ejercicios-bajar.jpg'  }])
 
 tweets = Tweet.create([{ author: 'Cyrus',body: 'blah blah blah' },
 { author: 'Cyrus',body: 'Finished Tough Mudder Tri-State 11-7-2015! 2nd Tough Mudder complete!', member_id: 1 },
