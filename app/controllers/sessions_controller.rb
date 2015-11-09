@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
-  skip_before_action :authenticate, only: [:new, :create] #this needs to be attached to each controller
+  #authentication
+  skip_before_action :authenticate, only: [:new, :create]
   def new
     @member = Member.new
   end

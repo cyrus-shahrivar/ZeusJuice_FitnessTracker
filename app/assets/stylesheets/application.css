@@ -65,3 +65,29 @@
   color: white;
   background-color: rgba(0,188,212,1);
 }
+
+.community-stats-subtitles {
+  padding-left: 5px;
+  font-weight: bold;
+}
+
+.community-stats-info {
+  text-align: right;
+  padding-right: 15px;
+}
+
+#new-tweet-container {
+  text-align: center;
+  background-color: rgba(0,188,212,1);
+  border-radius: 20px;
+  width: 200px;
+  margin: auto;
+}
+
+.member-page-containers {
+  width: 31%;
+  border: 1px;
+  padding: 10px;
+  display: inline-block;
+  vertical-align: top;
+}

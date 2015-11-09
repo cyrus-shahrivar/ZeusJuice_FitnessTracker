@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   #allows for front page with all articles to show first before login
-  skip_before_action :authenticate, only: [:index] #this needs to be attached to each controller
+  skip_before_action :authenticate, only: [:index] 
 
   def index
     @articles = Article.all

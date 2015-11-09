@@ -11,6 +11,7 @@ class TweetsController < ApplicationController
   end
   def create
     @tweet = Tweet.new tweet_params
+    #assigns the author to the tweet member_id foreign key
     @tweet.member_id = Member.find_by(username: @tweet.author).id
 
     @tweet.save

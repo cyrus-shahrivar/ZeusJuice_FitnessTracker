@@ -5,6 +5,7 @@ class MembersController < ApplicationController
 
   def show
     @member = Member.find(params[:id])
+    #grabs all tweets and journal entries for a specific member_id
     @all_tweets = Tweet.where(member_id: @member.id)
     @journal_entries = Journal.where(member_id: @member.id)
   end
