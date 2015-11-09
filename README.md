@@ -2,8 +2,8 @@
 
 https://damp-coast-8723.herokuapp.com/  
 
-Author: Cyrus Shahrivar
-Date: 11/9/2015
+- Author: Cyrus Shahrivar
+- Date: 11/9/2015
 
 ## Tech Used
 
