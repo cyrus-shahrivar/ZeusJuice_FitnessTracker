@@ -17,7 +17,7 @@ class MembersController < ApplicationController
   def create
     @member = Member.new member_params
     @member.save
-    redirect_to articles_path
+    redirect_to root_path
   end
   def edit
     @member = Member.find(params[:id])

@@ -29,13 +29,14 @@ header {
 footer {
   background-color: #C5CAE9;
   padding: 0;
-  margin: -20px;
+  margin: -100px;
   margin-bottom: -30px;
-  height: 300px;
+  height: 200px;
+  position: relative;
+  bottom: -100px;
 }
 
 footer > .container {
-  margin-left: 30px;
   padding-top: 30px;
   text-align: center;
   font-size: 14px;

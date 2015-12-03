@@ -8,7 +8,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <% if @current_uri != root_path %>
+    <div class="other-header">
+      <h1 style="font-size: 40px; font-family: 'Raleway', sans-serif; text-align: center;">zFit
+      </h1>
+    </div>
+  <% end %>
 <%= yield %>
 
 <footer>

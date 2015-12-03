@@ -1,3 +1,6 @@
+<div style="text-align: center; margin: 0 auto;">
+<h1>Login</h1>
+
 <%= form_for :session, url: login_path do |f| %>
 <% flash.each do |message_type, message| %>
      <div class="alert"-<%= message_type %>"><h1><%= message %></h1></div>
@@ -14,3 +17,4 @@
     <%= f.submit "Login"%>
   </p>
 <% end %>
+</div>
