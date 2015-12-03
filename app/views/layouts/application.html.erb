@@ -16,12 +16,15 @@
   <% end %>
 <%= yield %>
 
+<% if @current_uri != root_path %>
 <footer>
-  <div class="container">
+  <div>
     <p>
       &copy; zFit 2015
     </p>
   </div>
 </footer>
+<% end %>
+
 </body>
 </html>

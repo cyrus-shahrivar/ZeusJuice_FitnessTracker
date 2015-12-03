@@ -2,9 +2,7 @@
 <div id="login-sign-up">
   <% if logged_in %>
       Welcome <%= @current_user.username%> |
-      <%= link_to 'Profile', member_path(@current_user)%> |
-      <%= link_to 'Home Page',root_path%> |
-      <div style="display: inline-block;"><%= button_to 'Logout', logout_path, :method => :delete %></div>
+      <%= link_to 'Home Page',root_path%> | <%= link_to 'Logout', logout_path, :method => :delete %></div>
   <% else %>
       <%= link_to "Login", login_path %> |
       <%= link_to "Sign Up", new_member_path%>
@@ -36,6 +34,30 @@
     <%= f.submit "Update Exercise" %>
   </p>
   <%end%>
+  <!-- calorie progress bar  -->
+  <div style="width: 100%; height: 50px; background: linear-gradient(to right, red 0%, red <%= daily_calorie_percent%>%, white <%= daily_calorie_percent%>%); border: 1px solid black;"></div>
+  <hr>
+  <%= form_for @member do |f|%>
+  <p>
+    <%= f.label :minutes_exercised , "Minutes Exercised"%>
+    <%= f.number_field :minutes_exercised %>
+  </p>
+  <p>
+    <%= f.submit "Update Exercise" %>
+  </p>
+  <%end%>
+  <!-- calorie progress bar  -->
+  <div style="width: 100%; height: 50px; background: linear-gradient(to right, red 0%, red <%= daily_calorie_percent%>%, white <%= daily_calorie_percent%>%); border: 1px solid black;"></div>
+  <hr>
+  <%= form_for @member do |f|%>
+  <p>
+    <%= f.label :minutes_exercised , "Minutes Exercised"%>
+    <%= f.number_field :minutes_exercised %>
+  </p>
+  <p>
+    <%= f.submit "Update Exercise" %>
+  </p>
+  <%end%>
   <!-- exercise progress bar -->
   <div style="width: 100%; height: 50px; background: linear-gradient(to right, red 0%, red <%= @member.minutes_exercised %>%, white <%= @member.minutes_exercised %>%); border: 1px solid black;"></div>
   <hr>
@@ -47,17 +69,17 @@
   <hr>
 </div>
 <!-- live feed contributions container  -->
-<div class="member-page-containers">
-  <h2>Live Feed Contributions</h2>
+<!-- <div class="member-page-containers">
+  <h2>Stats</h2>
   <% @all_tweets.each do |tweet| %>
       <p><strong><%= tweet.created_at.strftime("%b %d, %Y %I:%M:%S %p") %></strong></p>
       <p><%= tweet.body %></p>
       <hr>
   <% end %>
 
-</div>
+</div> -->
 <!--journal entries container  -->
-<div class="member-page-containers">
+<div class="journal-page-containers">
   <h2>Journal</h2>
   <%= link_to "Add Journal Entry", new_journal_path%>
   <% @journal_entries.each do |journal| %>
