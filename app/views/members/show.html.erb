@@ -1,4 +1,16 @@
-<h2>Welcome <%= @member.username %>!</h2>
+
+<div id="login-sign-up">
+  <% if logged_in %>
+      Welcome <%= @current_user.username%> |
+      <%= link_to 'Profile', member_path(@current_user)%> |
+      <%= link_to 'Home Page',root_path%> |
+      <div style="display: inline-block;"><%= button_to 'Logout', logout_path, :method => :delete %></div>
+  <% else %>
+      <%= link_to "Login", login_path %> |
+      <%= link_to "Sign Up", new_member_path%>
+  <% end %>
+</div>
+<div class="stats-holding-container">
 <!-- Stats container -->
 <div class="member-page-containers">
   <h2>Stats</h2>
@@ -54,4 +66,5 @@
       <%= link_to "Edit Entry", edit_journal_path(journal) %>
       <hr>
   <% end %>
+</div>
 </div>
