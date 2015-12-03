@@ -8,43 +8,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header>
-    <h1 id="logo"><a href="/" style="color: black; text-decoration:none;"><span style="color: white;">z</span>Fit</a></h1>
-    <!-- sub logo -->
-    <h2 id="sub-logo">GET HEALTHY</h2>
-    <!-- login, sign up, and page nav area -->
-    <div id="login-sign-up">
-      <% if logged_in %>
-          Welcome <%= @current_user.username%> |
-          <%= link_to 'Profile', member_path(@current_user)%> |
-          <%= link_to 'Home Page',root_path%> |
-          <div style="display: inline-block;"><%= button_to 'Logout', logout_path, :method => :delete %></div>
-      <% else %>
-          <%= link_to "Login", login_path %> |
-          <%= link_to "Sign Up", new_member_path%>
-      <% end %>
-    </div>
-  </header>
 
-  <section id="about">
-    <article>
-      <h1 style="padding: 60px; font-size: 43px; display: inline-block; margin-bottom: 20px; padding-bottom: 10px">What is zFit?</h1>
-      <p style="padding: 10px 80px; width: 600px">
-        zFit is the premier fitness and health website that enables you to track your fitness and health goals, become inspired to set new ones, and encourage friends to stay healthy and fit too.
-      </p>
-    </article>
-    <article>
-      <h1 style="padding: 60px; font-size: 43px; display: inline-block; margin-bottom: 20px; padding-bottom: 10px">Why zFit?</h1>
-      <p style="padding: 10px 80px; width: 600px">
-        Are you struggling to achieve your fitness and health goals? Are you the type of person that needs constant reminders to keep on top of your goals?  Are you looking for community to support you on your path to a healthy life?
-
-        Then zFit is for YOU!  Sign up now at the link above!
-      </p>
-    </article>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Running_icon_-_Noun_Project_17825.svg" alt="running icon from wikimedia commons" style="width: 300px; position: relative; top: -380px; left: 850px;" />
-  </section>
 <%= yield %>
 
-<footer>Copyright zFit 2015</footer>
+<footer>
+  <div class="container">
+    <p>
+      &copy; zFit 2015
+    </p>
+  </div>
+</footer>
 </body>
 </html>

@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
   # The priority is based upon order of creation: first created -> highest priority.
-  root to: 'articles#index'
+  root to: 'homes#index'
+  
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
