@@ -25,8 +25,8 @@ tweets = Tweet.create([{ author: 'Cyrus',body: 'blah blah blah' },
 { author: 'Cyrus',body: 'Working on my 2nd WDI project.  Realized I haven\'t exercised in a while, so I\'m going for a run with Lululemon to test out an app with the SkillCoin NYC app guys.', member_id: 1  },
 { author: 'Cyrus',body: 'Testing, testing, 1, 2, 3.', member_id: 1 }])
 
-members = Member.create([{username: 'Cyrus', password: 'poop', password_confirmation:'poop'},
-  {username: 'Courtney', password: 'poop', password_confirmation:'poop'},
-  {username: 'Zeus', password: 'poop', password_confirmation:'poop'}])
+members = Member.create([{username: 'Cyrus', password: 'nope', password_confirmation:'nope'},
+  {username: 'Courtney', password: 'nope', password_confirmation:'nope'},
+  {username: 'Zeus', password: 'nope', password_confirmation:'nope'}])
 
 journals = Journal.create([{entry: "Hi, testing journal entry", member_id: 2}])

@@ -16,31 +16,11 @@ ActiveRecord::Schema.define(version: 20151108214125) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "admins", force: :cascade do |t|
-    t.string   "username"
-    t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
   create_table "articles", force: :cascade do |t|
     t.string   "title"
     t.string   "body"
     t.string   "author"
     t.string   "image_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "editors", force: :cascade do |t|
-    t.string   "username"
-    t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
-  create_table "guests", force: :cascade do |t|
-    t.string   "username"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -58,6 +38,12 @@ ActiveRecord::Schema.define(version: 20151108214125) do
     t.integer  "journal_num_entries"
     t.integer  "calorie_intake"
     t.integer  "minutes_exercised"
+    t.integer  "steps"
+    t.integer  "miles"
+    t.integer  "calories_burned"
+    t.integer  "weight"
+    t.integer  "sleep"
+    t.integer  "blood_sugar"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end

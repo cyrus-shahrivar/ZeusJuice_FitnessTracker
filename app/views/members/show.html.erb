@@ -2,7 +2,7 @@
 <div id="login-sign-up">
   <% if logged_in %>
       Welcome <%= @current_user.username%> |
-      <%= link_to 'Home Page',root_path%> | <%= link_to 'Logout', logout_path, :method => :delete %></div>
+      <%= link_to 'Logout', logout_path, :method => :delete %></div>
   <% else %>
       <%= link_to "Login", login_path %> |
       <%= link_to "Sign Up", new_member_path%>
@@ -12,74 +12,95 @@
 <!-- Stats container -->
 <div class="member-page-containers">
   <h2>Stats</h2>
+
+  <!-- CALORIES -->
+  <!-- display forms inline -->
     <%= form_for @member do |f|%>
-    <p>
+    <div style="padding-bottom: 4px;">
       <%= f.label :calorie_intake, "Calorie Intake"%>
-      <%= f.number_field :calorie_intake%>
-    </p>
-    <p>
+      <%= f.number_field :calorie_intake, :style => "width: 60px;"%>
       <%= f.submit "Update Calories" %>
-    </p>
+    </div>
     <%end%>
     <% daily_calorie_percent = @member.calorie_intake.to_f/2000*100%>
-  <!-- calorie progress bar  -->
-  <div style="width: 100%; height: 50px; background: linear-gradient(to right, red 0%, red <%= daily_calorie_percent%>%, white <%= daily_calorie_percent%>%); border: 1px solid black;"></div>
+  <div style="width: 100%; height: 20px; background: linear-gradient(to right, red 0%, red <%= daily_calorie_percent%>%, white <%= daily_calorie_percent%>%); border: 1px solid black;"></div>
   <hr>
+
+  <!--  MINUTES EXERCISED -->
   <%= form_for @member do |f|%>
-  <p>
+    <div style="padding-bottom: 4px;">
     <%= f.label :minutes_exercised , "Minutes Exercised"%>
-    <%= f.number_field :minutes_exercised %>
-  </p>
-  <p>
-    <%= f.submit "Update Exercise" %>
-  </p>
+    <%= f.number_field :minutes_exercised, :style => "width: 60px;" %>
+    <%= f.submit "Update Minutes" %>
+    </div>
   <%end%>
-  <!-- calorie progress bar  -->
-  <div style="width: 100%; height: 50px; background: linear-gradient(to right, red 0%, red <%= daily_calorie_percent%>%, white <%= daily_calorie_percent%>%); border: 1px solid black;"></div>
+  <div style="width: 100%; height: 20px; background: linear-gradient(to right, red 0%, red <%= @member.minutes_exercised %>%, white <%= @member.minutes_exercised %>%); border: 1px solid black;"></div>
   <hr>
+  <!-- STEPS EXERCISED -->
   <%= form_for @member do |f|%>
-  <p>
-    <%= f.label :minutes_exercised , "Minutes Exercised"%>
-    <%= f.number_field :minutes_exercised %>
-  </p>
-  <p>
-    <%= f.submit "Update Exercise" %>
-  </p>
+    <div style="padding-bottom: 4px;">
+    <%= f.label :steps , "Steps Exercised"%>
+    <%= f.number_field :steps, :style => "width: 60px;" %>
+    <%= f.submit "Update Steps" %>
+    </div>
   <%end%>
-  <!-- calorie progress bar  -->
-  <div style="width: 100%; height: 50px; background: linear-gradient(to right, red 0%, red <%= daily_calorie_percent%>%, white <%= daily_calorie_percent%>%); border: 1px solid black;"></div>
-  <hr>
+  <div style="width: 100%; height: 20px; background: linear-gradient(to right, red 0%, red <%= @member.steps %>%, white <%= @member.steps %>%); border: 1px solid black;"></div>
+<hr>
+  <!-- BLOOD SUGAR -->
   <%= form_for @member do |f|%>
-  <p>
-    <%= f.label :minutes_exercised , "Minutes Exercised"%>
-    <%= f.number_field :minutes_exercised %>
-  </p>
-  <p>
-    <%= f.submit "Update Exercise" %>
-  </p>
+    <div style="padding-bottom: 4px;">
+    <%= f.label :blood_sugar , "Blood Sugar"%>
+    <%= f.number_field :blood_sugar, :style => "width: 60px;"  %>
+    <%= f.submit "Update Blood Sugar" %>
+    </div>
   <%end%>
-  <!-- exercise progress bar -->
-  <div style="width: 100%; height: 50px; background: linear-gradient(to right, red 0%, red <%= @member.minutes_exercised %>%, white <%= @member.minutes_exercised %>%); border: 1px solid black;"></div>
+  <div style="width: 100%; height: 20px; background: linear-gradient(to right, red 0%, red <%= @member.blood_sugar %>%, white <%= @member.blood_sugar %>%); border: 1px solid black;"></div>
+<hr>
+  <!-- MILES EXERCISED -->
+  <%= form_for @member do |f|%>
+    <div style="padding-bottom: 4px;">
+    <%= f.label :miles , "Miles"%>
+    <%= f.number_field :miles, :style => "width: 60px;" %>
+    <%= f.submit "Update Miles" %>
+    </div>
+  <%end%>
+  <div style="width: 100%; height: 20px; background: linear-gradient(to right, red 0%, red <%= @member.miles %>%, white <%= @member.miles %>%); border: 1px solid black;"></div>
   <hr>
-  <p>Number of Live Feed Contributions</p>
+
+  <!-- CALORIES BURNED EXERCISED -->
+  <%= form_for @member do |f|%>
+    <div style="padding-bottom: 4px;">
+    <%= f.label :calories_burned , "Calories Burned"%>
+    <%= f.number_field :calories_burned, :style => "width: 60px;" %>
+    <%= f.submit "Update Calories Burned" %>
+    </div>
+  <%end%>
+  <div style="width: 100%; height: 20px; background: linear-gradient(to right, red 0%, red <%= @member.calories_burned %>%, white <%= @member.calories_burned %>%); border: 1px solid black;"></div>
+  <hr>
+
+  <!-- SLEEP EXERCISED -->
+  <%= form_for @member do |f|%>
+    <div style="padding-bottom: 4px;">
+    <%= f.label :sleep , "Sleep"%>
+    <%= f.number_field :sleep, :style => "width: 60px;" %>
+    <%= f.submit "Update Sleep" %>
+    </div>
+  <%end%>
+  <div style="width: 100%; height: 20px; background: linear-gradient(to right, red 0%, red <%= @member.sleep %>%, white <%= @member.sleep %>%); border: 1px solid black;"></div>
+  <hr>
+
+  <!-- <p>Number of Live Feed Contributions</p>
   <p style="text-align: right;"><%= @all_tweets.count %></p>
   <hr>
   <p>Number of Journal Entries</p>
   <p style="text-align: right;"><%= @journal_entries.count %></p>
-  <hr>
+  <hr> -->
 </div>
-<!-- live feed contributions container  -->
-<!-- <div class="member-page-containers">
-  <h2>Stats</h2>
-  <% @all_tweets.each do |tweet| %>
-      <p><strong><%= tweet.created_at.strftime("%b %d, %Y %I:%M:%S %p") %></strong></p>
-      <p><%= tweet.body %></p>
-      <hr>
-  <% end %>
 
-</div> -->
+
+
 <!--journal entries container  -->
-<div class="journal-page-containers">
+<!-- <div class="journal-page-containers">
   <h2>Journal</h2>
   <%= link_to "Add Journal Entry", new_journal_path%>
   <% @journal_entries.each do |journal| %>
@@ -88,5 +109,5 @@
       <%= link_to "Edit Entry", edit_journal_path(journal) %>
       <hr>
   <% end %>
-</div>
+</div> -->
 </div>
