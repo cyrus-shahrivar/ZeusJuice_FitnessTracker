@@ -5,9 +5,6 @@ class MembersController < ApplicationController
 
   def show
     @member = Member.find(params[:id])
-    #grabs all tweets and journal entries for a specific member_id
-    @all_tweets = Tweet.where(member_id: @member.id)
-    @journal_entries = Journal.where(member_id: @member.id)
   end
 
   def new
@@ -32,7 +29,7 @@ class MembersController < ApplicationController
   private
 
   def member_params
-    params.require(:member).permit(:username, :calorie_intake,:calorie_intake_goal, :minutes_exercised,:minutes_exercised_goal,  :journal_num_entries, :password, :password_confirmation,
+    params.require(:member).permit(:username, :calorie_intake,:calorie_intake_goal, :minutes_exercised,:minutes_exercised_goal, :password, :password_confirmation,
     :steps,:steps_goal, :miles,:miles_goal, :calories_burned,:calories_burned_goal, :weight,:weight_goal, :sleep,:sleep_goal, :blood_sugar,:blood_sugar_goal)
   end
 

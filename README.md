@@ -5,6 +5,9 @@ https://fathomless-depths-9173.herokuapp.com/
 - Author: Cyrus Shahrivar
 - Date: 11/9/2015
 
+## Update 12/13/2015
+- The application has been totally revamped to focus on just tracking goals for each individual member.  The front page was redone to look more like a landing page, and the member pages were revamped to be just health and fitness trackers.
+
 ## Tech Used
 
 - Ruby
