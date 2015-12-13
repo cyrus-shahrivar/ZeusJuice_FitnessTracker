@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151108214125) do
+ActiveRecord::Schema.define(version: 20151213150649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,8 +44,16 @@ ActiveRecord::Schema.define(version: 20151108214125) do
     t.integer  "weight"
     t.integer  "sleep"
     t.integer  "blood_sugar"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "calorie_intake_goal"
+    t.string   "minutes_exercised_goal"
+    t.string   "steps_goal"
+    t.string   "miles_goal"
+    t.string   "calories_burned_goal"
+    t.string   "weight_goal"
+    t.string   "sleep_goal"
+    t.string   "blood_sugar_goal"
   end
 
   create_table "tweets", force: :cascade do |t|

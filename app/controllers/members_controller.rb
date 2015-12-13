@@ -32,8 +32,8 @@ class MembersController < ApplicationController
   private
 
   def member_params
-    params.require(:member).permit(:username, :calorie_intake, :minutes_exercised, :journal_num_entries, :password, :password_confirmation,
-    :steps, :miles, :calories_burned, :weight, :sleep, :blood_sugar)
+    params.require(:member).permit(:username, :calorie_intake,:calorie_intake_goal, :minutes_exercised,:minutes_exercised_goal,  :journal_num_entries, :password, :password_confirmation,
+    :steps,:steps_goal, :miles,:miles_goal, :calories_burned,:calories_burned_goal, :weight,:weight_goal, :sleep,:sleep_goal, :blood_sugar,:blood_sugar_goal)
   end
 
 end
