@@ -1,6 +1,6 @@
 # ZeusJuice - FitnessTracker
 
-https://fathomless-depths-9173.herokuapp.com/
+https://zfitness.herokuapp.com/
 
 - Author: Cyrus Shahrivar
 - Date: 11/9/2015
