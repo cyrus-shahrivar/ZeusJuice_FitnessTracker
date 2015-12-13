@@ -29,7 +29,7 @@
       <%= f.submit "Update Goal" %>
     </div>
     <%end%>
-    <% daily_calorie_percent = @member.calorie_intake.to_f/2000*100%>
+    <% daily_calorie_percent = @member.calorie_intake.to_f/@member.calorie_intake_goal.to_f*100%>
   <div style="width: 100%; height: 20px; background: linear-gradient(to right, red 0%, red <%= daily_calorie_percent%>%, white <%= daily_calorie_percent%>%); border: 1px solid black;"></div>
   <hr>
   <!-- CALORIES BURNED EXERCISED -->
@@ -47,7 +47,8 @@
     <%= f.submit "Update Goal" %>
     </div>
   <%end%>
-  <div style="width: 100%; height: 20px; background: linear-gradient(to right, red 0%, red <%= @member.calories_burned %>%, white <%= @member.calories_burned %>%); border: 1px solid black;"></div>
+  <% daily_calorie_burned_percent = @member.calories_burned.to_f/@member.calories_burned_goal.to_f*100%>
+  <div style="width: 100%; height: 20px; background: linear-gradient(to right, red 0%, red <%= daily_calorie_burned_percent %>%, white <%= daily_calorie_burned_percent%>%); border: 1px solid black;"></div>
   <hr>
   <!--  MINUTES EXERCISED -->
   <%= form_for @member do |f|%>
@@ -64,7 +65,8 @@
     <%= f.submit "Update Goal" %>
     </div>
   <%end%>
-  <div style="width: 100%; height: 20px; background: linear-gradient(to right, red 0%, red <%= @member.minutes_exercised %>%, white <%= @member.minutes_exercised %>%); border: 1px solid black;"></div>
+  <% daily_minutes_exercised_percent = @member.minutes_exercised.to_f/@member.minutes_exercised_goal.to_f*100%>
+  <div style="width: 100%; height: 20px; background: linear-gradient(to right, red 0%, red <%= daily_minutes_exercised_percent %>%, white <%= daily_minutes_exercised_percent %>%); border: 1px solid black;"></div>
   <hr>
   <!-- MILES EXERCISED -->
   <%= form_for @member do |f|%>
@@ -76,12 +78,13 @@
   <%end%>
   <%= form_for @member do |f|%>
     <div style="padding-bottom: 4px;">
-    <%= f.label :miles_goal , "Daily Goal"%>
+    <%= f.label :miles_goal , "Goal"%>
     <%= f.number_field :miles_goal, :style => "width: 60px;" %>
     <%= f.submit "Update Goal" %>
     </div>
   <%end%>
-  <div style="width: 100%; height: 20px; background: linear-gradient(to right, red 0%, red <%= @member.miles %>%, white <%= @member.miles %>%); border: 1px solid black;"></div>
+  <% daily_miles_exercised_percent = @member.miles.to_f/@member.miles_goal.to_f*100%>
+  <div style="width: 100%; height: 20px; background: linear-gradient(to right, red 0%, red <%= daily_miles_exercised_percent %>%, white <%= daily_miles_exercised_percent %>%); border: 1px solid black;"></div>
   <hr>
   <!-- STEPS EXERCISED -->
   <%= form_for @member do |f|%>
@@ -98,7 +101,8 @@
     <%= f.submit "Update Goal" %>
     </div>
   <%end%>
-  <div style="width: 100%; height: 20px; background: linear-gradient(to right, red 0%, red <%= @member.steps %>%, white <%= @member.steps %>%); border: 1px solid black;"></div>
+  <% daily_steps_percent = @member.steps.to_f/@member.steps_goal.to_f*100%>
+  <div style="width: 100%; height: 20px; background: linear-gradient(to right, red 0%, red <%= daily_steps_percent %>%, white <%= daily_steps_percent %>%); border: 1px solid black;"></div>
 <hr>
   <!-- BLOOD SUGAR -->
   <%= form_for @member do |f|%>
@@ -115,12 +119,9 @@
     <%= f.submit "Update Goal" %>
     </div>
   <%end%>
-  <div style="width: 100%; height: 20px; background: linear-gradient(to right, red 0%, red <%= @member.blood_sugar %>%, white <%= @member.blood_sugar %>%); border: 1px solid black;"></div>
+  <% daily_blood_sugar_percent = @member.blood_sugar.to_f/@member.blood_sugar_goal.to_f*100%>
+  <div style="width: 100%; height: 20px; background: linear-gradient(to right, red 0%, red <%= daily_blood_sugar_percent %>%, white <%= daily_blood_sugar_percent %>%); border: 1px solid black;"></div>
 <hr>
-
-
-
-
   <!-- SLEEP EXERCISED -->
   <%= form_for @member do |f|%>
     <div style="padding-bottom: 4px;">
@@ -136,7 +137,8 @@
     <%= f.submit "Update Goal" %>
     </div>
   <%end%>
-  <div style="width: 100%; height: 20px; background: linear-gradient(to right, red 0%, red <%= @member.sleep %>%, white <%= @member.sleep %>%); border: 1px solid black;"></div>
+  <% daily_sleep_percent = @member.sleep.to_f/@member.sleep_goal.to_f*100%>
+  <div style="width: 100%; height: 20px; background: linear-gradient(to right, red 0%, red <%= daily_sleep_percent %>%, white <%= daily_sleep_percent %>%); border: 1px solid black;"></div>
   <hr>
 
   <!-- <p>Number of Live Feed Contributions</p>
