@@ -1,5 +1,8 @@
 # ZeusJuice - FitnessTracker
 
+
+<img src="./screen-shot.png"/ width="700">
+
 https://zfitness.herokuapp.com/
 
 - Author: Cyrus Shahrivar
