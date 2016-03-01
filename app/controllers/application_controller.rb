@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   #authentication
+  # black list everything
   before_action :authenticate
 
   def authenticate
