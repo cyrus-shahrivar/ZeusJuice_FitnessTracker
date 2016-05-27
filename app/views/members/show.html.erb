@@ -12,39 +12,138 @@
   <!-- Stats container -->
   <div class="member-page-containers">
     <h2>Stats</h2>
-      <!-- Form -->
+      <!-- CALORIES INTAKE FORM -->
       <%= form_for @member do |f|%>
         <div style="padding-bottom: 4px;">
           <%= f.label :calorie_intake, "Calorie Intake"%>
           <%= f.number_field :calorie_intake, :style => "width: 60px;"%>
-          <%= f.label :calorie_intake_goal, "Daily Goal"%>
-          <%= f.number_field :calorie_intake_goal, :style => "width: 60px;"%>
-          <%= f.label :sleep_goal , "Nightly Goal"%>
-          <%= f.number_field :sleep_goal, :style => "width: 60px;" %>
-          <%= f.label :calories_burned , "Calories Burned"%>
-          <%= f.number_field :calories_burned, :style => "width: 60px;" %>
-          <%= f.label :calories_burned_goal , "Daily Goal"%>
-          <%= f.number_field :calories_burned_goal, :style => "width: 60px;" %>
-          <%= f.label :minutes_exercised , "Minutes Exercised"%>
-          <%= f.number_field :minutes_exercised, :style => "width: 60px;" %>
-          <%= f.label :minutes_exercised_goal , "Daily Goal"%>
-          <%= f.number_field :minutes_exercised_goal, :style => "width: 60px;" %>
-          <%= f.label :miles , "Miles"%>
-          <%= f.number_field :miles, :style => "width: 60px;" %>
-          <%= f.label :miles_goal , "Goal"%>
-          <%= f.number_field :miles_goal, :style => "width: 60px;" %>
-          <%= f.label :steps , "Steps Exercised"%>
-          <%= f.number_field :steps, :style => "width: 60px;" %>
-          <%= f.label :steps_goal , "Daily Goal"%>
-          <%= f.number_field :steps_goal, :style => "width: 60px;" %>
-          <%= f.label :blood_sugar , "Blood Sugar"%>
-          <%= f.number_field :blood_sugar, :style => "width: 60px;"  %>
-          <%= f.label :blood_sugar_goal , "Each Time Goal"%>
-          <%= f.number_field :blood_sugar_goal, :style => "width: 60px;"  %>
-          <%= f.label :sleep , "Sleep"%>
-          <%= f.number_field :sleep, :style => "width: 60px;" %>
-          <%= f.submit "Update" %>
+          <%= f.submit "Update Calories" %>
         </div>
       <%end%>
+      <%= form_for @member do |f|%>
+        <div style="padding-bottom: 4px;">
+          <%= f.label :calorie_intake_goal, "Daily Goal"%>
+          <%= f.number_field :calorie_intake_goal, :style => "width: 60px;"%>
+          <%= f.submit "Update Goal" %>
+        </div>
+      <%end%>
+      <!-- CALORIES INTAKE CALCULATION AND TRACKING BAR-->
+      <% daily_calorie_percent = @member.calorie_intake.to_f/@member.calorie_intake_goal.to_f*100%>
+      <div style="width: 100%; height: 20px; background: linear-gradient(to right, red 0%, red <%= daily_calorie_percent%>%, white <%= daily_calorie_percent%>%); border: 1px solid black;"></div>
+      <hr>
+      <!-- CALORIES BURNED EXERCISED FORM -->
+      <%= form_for @member do |f|%>
+        <div style="padding-bottom: 4px;">
+        <%= f.label :calories_burned , "Calories Burned"%>
+        <%= f.number_field :calories_burned, :style => "width: 60px;" %>
+        <%= f.submit "Update Calories Burned" %>
+        </div>
+      <%end%>
+      <%= form_for @member do |f|%>
+        <div style="padding-bottom: 4px;">
+        <%= f.label :calories_burned_goal , "Daily Goal"%>
+        <%= f.number_field :calories_burned_goal, :style => "width: 60px;" %>
+        <%= f.submit "Update Goal" %>
+        </div>
+      <%end%>
+      <!-- CALORIES BURNED CALCULATION AND TRACKING BAR-->
+      <% daily_calorie_burned_percent = @member.calories_burned.to_f/@member.calories_burned_goal.to_f*100%>
+      <div style="width: 100%; height: 20px; background: linear-gradient(to right, red 0%, red <%= daily_calorie_burned_percent %>%, white <%= daily_calorie_burned_percent%>%); border: 1px solid black;"></div>
+      <hr>
+      <!--  MINUTES EXERCISED FORM -->
+      <%= form_for @member do |f|%>
+        <div style="padding-bottom: 4px;">
+        <%= f.label :minutes_exercised , "Minutes Exercised"%>
+        <%= f.number_field :minutes_exercised, :style => "width: 60px;" %>
+        <%= f.submit "Update Minutes" %>
+        </div>
+      <%end%>
+      <%= form_for @member do |f|%>
+        <div style="padding-bottom: 4px;">
+        <%= f.label :minutes_exercised_goal , "Daily Goal"%>
+        <%= f.number_field :minutes_exercised_goal, :style => "width: 60px;" %>
+        <%= f.submit "Update Goal" %>
+        </div>
+      <%end%>
+      <!-- MINUTES EXERCISED CALCULATION AND TRACKING BAR-->
+      <% daily_minutes_exercised_percent = @member.minutes_exercised.to_f/@member.minutes_exercised_goal.to_f*100%>
+      <div style="width: 100%; height: 20px; background: linear-gradient(to right, red 0%, red <%= daily_minutes_exercised_percent %>%, white <%= daily_minutes_exercised_percent %>%); border: 1px solid black;"></div>
+      <hr>
+      <!-- MILES EXERCISED FORM -->
+      <%= form_for @member do |f|%>
+        <div style="padding-bottom: 4px;">
+        <%= f.label :miles , "Miles"%>
+        <%= f.number_field :miles, :style => "width: 60px;" %>
+        <%= f.submit "Update Miles" %>
+        </div>
+      <%end%>
+      <%= form_for @member do |f|%>
+        <div style="padding-bottom: 4px;">
+        <%= f.label :miles_goal , "Goal"%>
+        <%= f.number_field :miles_goal, :style => "width: 60px;" %>
+        <%= f.submit "Update Goal" %>
+        </div>
+      <%end%>
+      <!-- MILE EXERCISED CALCULATION AND TRACKING BAR-->
+      <% daily_miles_exercised_percent = @member.miles.to_f/@member.miles_goal.to_f*100%>
+      <div style="width: 100%; height: 20px; background: linear-gradient(to right, red 0%, red <%= daily_miles_exercised_percent %>%, white <%= daily_miles_exercised_percent %>%); border: 1px solid black;"></div>
+      <hr>
+      <!-- STEPS EXERCISED FORM -->
+      <%= form_for @member do |f|%>
+        <div style="padding-bottom: 4px;">
+        <%= f.label :steps , "Steps Exercised"%>
+        <%= f.number_field :steps, :style => "width: 60px;" %>
+        <%= f.submit "Update Steps" %>
+        </div>
+      <%end%>
+      <%= form_for @member do |f|%>
+        <div style="padding-bottom: 4px;">
+        <%= f.label :steps_goal , "Daily Goal"%>
+        <%= f.number_field :steps_goal, :style => "width: 60px;" %>
+        <%= f.submit "Update Goal" %>
+        </div>
+      <%end%>
+      <!-- STEPS EXERCISED CALCULATION AND TRACKING BAR-->
+      <% daily_steps_percent = @member.steps.to_f/@member.steps_goal.to_f*100%>
+      <div style="width: 100%; height: 20px; background: linear-gradient(to right, red 0%, red <%= daily_steps_percent %>%, white <%= daily_steps_percent %>%); border: 1px solid black;"></div>
+      <hr>
+      <!-- BLOOD SUGAR FORM -->
+      <%= form_for @member do |f|%>
+        <div style="padding-bottom: 4px;">
+        <%= f.label :blood_sugar , "Blood Sugar"%>
+        <%= f.number_field :blood_sugar, :style => "width: 60px;"  %>
+        <%= f.submit "Update Blood Sugar" %>
+        </div>
+      <%end%>
+      <%= form_for @member do |f|%>
+        <div style="padding-bottom: 4px;">
+        <%= f.label :blood_sugar_goal , "Each Time Goal"%>
+        <%= f.number_field :blood_sugar_goal, :style => "width: 60px;"  %>
+        <%= f.submit "Update Goal" %>
+        </div>
+      <%end%>
+      <!-- BLOOD SUGAR CALCULATION AND TRACKING BAR-->
+      <% daily_blood_sugar_percent = @member.blood_sugar.to_f/@member.blood_sugar_goal.to_f*100%>
+      <div style="width: 100%; height: 20px; background: linear-gradient(to right, red 0%, red <%= daily_blood_sugar_percent %>%, white <%= daily_blood_sugar_percent %>%); border: 1px solid black;"></div>
+      <hr>
+      <!-- SLEEP EXERCISED FORM -->
+      <%= form_for @member do |f|%>
+        <div style="padding-bottom: 4px;">
+        <%= f.label :sleep , "Sleep"%>
+        <%= f.number_field :sleep, :style => "width: 60px;" %>
+        <%= f.submit "Update Sleep" %>
+        </div>
+      <%end%>
+      <%= form_for @member do |f|%>
+        <div style="padding-bottom: 4px;">
+        <%= f.label :sleep_goal , "Nightly Goal"%>
+        <%= f.number_field :sleep_goal, :style => "width: 60px;" %>
+        <%= f.submit "Update Goal" %>
+        </div>
+      <%end%>
+      <!-- SLEEP CALCULATION AND TRACKING BAR-->
+      <% daily_sleep_percent = @member.sleep.to_f/@member.sleep_goal.to_f*100%>
+      <div style="width: 100%; height: 20px; background: linear-gradient(to right, red 0%, red <%= daily_sleep_percent %>%, white <%= daily_sleep_percent %>%); border: 1px solid black;"></div>
+      <hr>
   </div>
 </div>
