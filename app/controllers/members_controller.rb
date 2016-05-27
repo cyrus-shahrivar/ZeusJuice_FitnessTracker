@@ -1,10 +1,16 @@
 class MembersController < ApplicationController
   skip_before_action :authenticate, only: [:new, :create]
+  # before_action :require_user, only: [:index, :show]
   def login
   end
 
   def show
     @member = Member.find(params[:id])
+    unless @member.id == @current_user.id
+      flash[:notice] = "You don't have access other member pages!"
+      redirect_to member_path(@current_user)
+      return
+    end
   end
 
   def new
